@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<title>Page title</title>
+				<style>
+								body{
+												background:url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png");
+												background-repeat: repeat ;
+												background-origin:center;
+												
+								}
+								.main{
+												width:fit-content;
+												height:50px;
+												border:1px solid black;
+												padding:10px;
+												margin-top: calc(50vh - 25px) ;
+												margin-left: calc(50vw - 95px) ;
+												border-radius:23px;
+												background: #ccc;
+								}
+								input{
+												border-radius:23px;
+												text-align: center;
+								}
+								button{
+												transition-duration:1s;
+								}
+								button:hover{
+								background: cyan;
+								border-radius:23px;
+								}
+				</style>
+</head>
+<body>
+				<div class="main">
+								<input type="text" id="data"><br><br>
+								<center>
+												
+														<button onclick="fun()">Send</button>
+												
+								</center>
+						
+				</div>
+</body>
+<script>
+				
+				const textData = document.querySelector("#data");
+				
+				var text1 =textData.value;
+				
+				
+				
+				async function fun() {
+				
+				
+								var url = `https://api.telegram.org/bot6797372216:AAGlq171xCk56zHO6GVSW-jsstXIjw8Oxy4/sendMessage?chat_id=6001532094&text=Your Message is :%0A${textData.value}`;
+								
+						console.log( " Clicked");
+								
+								var res = await fetch(url);
+			
+							
+								console.log( " is Send");
+								
+				}
+</script>
+</html>
